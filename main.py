@@ -7,6 +7,7 @@ import socket
 import openpyxl
 import tkinter as tk
 import tkinter.simpledialog as sd
+from tkinter import Canvas
 from tkinter import messagebox
 
 
@@ -167,5 +168,21 @@ btn1.pack(side="top", padx=10, pady=10)
 btn2.pack(side="top", padx=10, pady=10)
 btn3.pack(side="top", padx=10, pady=10)
 btn4.pack(side="top", padx=10, pady=10)
+
+
+
+# Define o caminho do arquivo de imagem do ícone
+caminho_icone = "C:/Users/frederico.almeida/PycharmProjects/Etq_v2/tech.ico"
+
+# Define o ícone da janela do Tkinter
+root.iconbitmap(caminho_icone)
+
+
+# Crie um canvas e adicione-o à sua janela
+canvas = Canvas(root, width=300, height=300)
+canvas.pack()
+
+# Adicione o texto de copyright no canto inferior direito
+copyright = canvas.create_text(150, 100, text="© 2023 Frederico Almeida. Todos os direitos reservados.")
 
 root.mainloop()
